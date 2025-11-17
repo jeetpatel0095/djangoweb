@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}contact{% endblock %}
+{% block nav_contact %} active {% endblock %}
+
+{% block content %}
+
+<!-- Start Contact Form -->
+<div class="untree_co-section">
+  <div class="container">
+
+    <div class="block">
+      <div class="row justify-content-center">
+
+        <div class="col-md-10 col-lg-10 pb-4">
+
+          <div class="row align-items-center">
+
+            <!-- Left: Login Form -->
+            <div class="col-lg-5 mb-4">
+              <form class="d-flex flex-column gap-3">
+
+                <!-- Username -->
+                <div class="form-group">
+                  <label class="text-black" for="username">Username</label>
+                  <input type="text" class="form-control" id="username">
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                  <label class="text-black" for="password">Password</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+
+                <!-- Button -->
+                <button type="submit" class="btn btn-primary-hover-outline">Login</button>
+                
+              </form>
+            </div>
+
+            <!-- Right: Image -->
+            <div class="col-lg-7">
+              <div class="hero-img-wrap text-center">
+                <img src="{% static 'images/couch.png' %}" class="img-fluid" alt="Image">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Contact Form -->
+
+{% endblock %}
