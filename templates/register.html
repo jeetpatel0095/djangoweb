@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<div class="untree_co-section">
+  <div class="container">
+
+    <div class="block">
+      <div class="row justify-content-center">
+
+        <div class="col-md-10 col-lg-10 pb-4">
+
+          <div class="row align-items-center">
+
+            <!-- Left: Register Form -->
+            <div class="col-lg-5 mb-4">
+              <h3 class="mb-4">Register</h3>
+              
+              <form action="/register/" method="post">
+                {% csrf_token %}
+
+                <div class="form-group mb-3">
+                  <label class="text-black fw-bold" for="fname">First Name</label>
+                  <input type="text" class="form-control" id="fname" name="fname" required>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="text-black fw-bold" for="lname">Last Name</label>
+                  <input type="text" class="form-control" id="lname" name="lname">
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="text-black fw-bold" for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="text-black fw-bold" for="uname">User Name</label>
+                  <input type="text" class="form-control" id="uname" name="uname" required>
+                </div>
+
+                <div class="form-group mb-3">
+                  <label class="text-black fw-bold" for="pwd1">Password</label>
+                  <input type="password" class="form-control" id="pwd1" name="pass1" required>
+                </div>
+
+                <div class="form-group mb-4">
+                  <label class="text-black fw-bold" for="pwd2">Confirm Password</label>
+                  <input type="password" class="form-control" id="pwd2" name="pass2" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+              </form>
+
+              <div class="mt-3 d-flex justify-content-between">
+                <a href="/login/" class="text-primary">Have an Account</a>
+              </div>
+
+            </div>
+
+            <!-- Right: Image -->
+            <div class="col-lg-7">
+              <div class="hero-img-wrap text-center">
+                <img src="{% static 'images/couch.png' %}" class="img-fluid" alt="Image">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
