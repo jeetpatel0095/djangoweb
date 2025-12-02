@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth import get_user_model
+from .models import Product
+
 
 def index(request):
     return render(request, 'index.html')
@@ -25,7 +27,8 @@ def checkout(request):
     return render(request, 'checkout.html')
 
 def shop(request):
-    return render(request, 'shop.html')
+    pro = Product.objects.all()
+    return render(request, 'shop.html',{'pros':pro})
 
 def thankyou(request):
     return render(request, 'thankyou.html')
