@@ -61,7 +61,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     print('Logout successfully!')
-    return redirect('/')
+    return redirect('/login/')
 
 
 # ---------------------------
@@ -102,3 +102,6 @@ def register(request):
         return redirect('/login/')
 
     return render(request, 'register.html')
+
+def forgotpassword(request):
+    return render(request, 'forgotpassword.html')
